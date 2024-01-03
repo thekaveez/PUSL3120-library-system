@@ -11,7 +11,7 @@ app.use((req, res, next) => {
 });
 //routes
 app.get("/", (req, res) => {
-  res.json({ msg: "Welcome to library" });
+  res.json({ msg: "Welcome to library System" });
 });
 
 app.listen(process.env.PORT, () => {
