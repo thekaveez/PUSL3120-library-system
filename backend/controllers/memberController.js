@@ -15,4 +15,14 @@ const getMember = async (req, res) => {
   res.status(200).json(member);
 };
 
+// post member
+const addMember = async () => {};
+
 // update member
+const updateMember = async () => {};
+
+module.exports = {
+  getMember,
+  addMember,
+  updateMember,
+};
