@@ -19,7 +19,20 @@ const getMember = async (req, res) => {
 const addMember = async () => {};
 
 // update member
-const updateMember = async () => {};
+const updateMember = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "No such member" });
+  }
+
+  const member = await Member.findOneAndUpdate({ _id: id }, { ...req.body });
+
+  if (!member) {
+    return res.status(404).json({ error: "No such member" });
+  }
+  res.status(200).json(member);
+};
 
 module.exports = {
   getMember,
