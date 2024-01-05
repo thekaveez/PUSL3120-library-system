@@ -123,6 +123,70 @@ header a {
   margin-left: 150px;
 }
 
+/*aboutus*/
+
+.about-us {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.about-us h2 {
+  color: #d6d5d5;
+}
+
+.about-us p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
 
 
 
+/*contactus*/
+.contact-us {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-us h2 {
+  color: #333;
+}
+
+.contact-us p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.contact-us ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-us li {
+  margin-bottom: 10px;
+}
+
+.contact-us strong {
+  color: #333;
+}
+
+.social-media-links {
+  margin-top: 20px;
+}
+
+.social-media-links a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Style the social media icons as needed */
+.social-media-links img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
