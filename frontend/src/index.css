@@ -122,3 +122,22 @@ header a {
   font-size: 30px;
   margin-left: 150px;
 }
+
+.error {
+  color: var(--error);
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.btn {
+  border-color: #feaf00;
+  color: #feaf00;
+  margin-top: 10px;
+}
+.btn:hover {
+  background-color: #feaf00;
+  color: #242121;
+  border-color: #feaf00;
+}
