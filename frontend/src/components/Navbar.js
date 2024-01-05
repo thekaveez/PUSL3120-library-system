@@ -22,7 +22,7 @@ const NavbarComponent = () => {
             <Nav.Link className="nav-links" as={Link} to={"/contact"}>
               Contact Us
             </Nav.Link>
-            <Nav.Link className="nav-links" as={Link} to={"/register"}>
+            <Nav.Link className="nav-links" as={Link} to={"/login"}>
               Register/Login
             </Nav.Link>
           </Nav>
