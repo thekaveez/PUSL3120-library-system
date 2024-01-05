@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSignup } from "../hooks/useSignup";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -10,11 +11,12 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [uniID, setuniID] = useState("");
   const [password, setPassword] = useState("");
+  const { signup, error, isLoading } = useSignup();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(firstName, lastName, email, uniID, password);
+    await signup(firstName, lastName, email, uniID, password);
   };
 
   return (
@@ -65,9 +67,10 @@ const Signup = () => {
           value={password}
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" disabled={isLoading}>
         Register
       </Button>
+      {error && <div className="alert alert-danger error">{error}</div>}
       <Form.Text className="sm-text">
         I already have an account <Link to={"/login "}>Login</Link>
       </Form.Text>
