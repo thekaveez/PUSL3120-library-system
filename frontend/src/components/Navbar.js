@@ -1,28 +1,34 @@
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+
+const NavbarComponent = () => {
   return (
-    <header>
-      <div className="container">
-        <Link to="/">
-          <h1>UniReads</h1>
-        </Link>
-        <ul className="navs">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About Us</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact Us</Link>
-          </li>
-          <li>
-            <Link to="/register">Register/Login</Link>
-          </li>
-        </ul>
-      </div>
-    </header>
+    <>
+      <Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand className="nav-brand" as={Link} to={"/"}>
+            UniReads
+          </Navbar.Brand>
+          <Nav className="ms-auto">
+            <Nav.Link className="nav-links" as={Link} to={"/"}>
+              Home
+            </Nav.Link>
+            <Nav.Link className="nav-links" as={Link} to={"/about"}>
+              About Us
+            </Nav.Link>
+            <Nav.Link className="nav-links" as={Link} to={"/contact"}>
+              Contact Us
+            </Nav.Link>
+            <Nav.Link className="nav-links" as={Link} to={"/register"}>
+              Register/Login
+            </Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    </>
   );
 };
-export default Navbar;
+export default NavbarComponent;
