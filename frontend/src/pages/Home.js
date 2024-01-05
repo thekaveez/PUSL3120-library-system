@@ -9,12 +9,16 @@ const Home = () => {
   const [filterData, setFilterData] = useState([]);
   useEffect(() => {
     const fetchBooks = async () => {
-      const response = await fetch("/api/books");
-      const json = await response.json();
-
-      if (response.ok) {
+      try {
+        const response = await fetch("/api/books");
+        if (!response.ok) {
+          throw Error("Failed to fetch books");
+        }
+        const json = await response.json();
         setBooks(json);
         setFilterData(json);
+      } catch (error) {
+        console.error("Error fetching books", error.message);
       }
     };
     fetchBooks();
