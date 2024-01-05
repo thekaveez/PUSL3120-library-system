@@ -28,32 +28,6 @@ header a {
   text-decoration: none;
 }
 
-.navs {
-  float: right;
-  flex: 1;
-  list-style: none;
-  text-align: right;
-}
-.navs li {
-  display: inline-block;
-  margin: 25px;
-  font-size: 15px;
-  cursor: pointer;
-}
-.navs li a {
-  position: relative;
-}
-.navs li a:hover {
-  background-color: #feaf00;
-  color: #242121;
-  padding: 10px;
-  border-radius: 5px;
-}
-.navs li a:current {
-  background-color: #feaf00;
-  padding: 10px;
-  border-radius: 5px;
-}
 .pages {
   max-width: 1800px;
   padding: 20px;
@@ -86,4 +60,21 @@ header a {
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: 4.5%;
+}
+
+/* React Bootstrap */
+.nav-brand {
+  font-size: 30px;
+}
+.nav-links {
+  float: right;
+  margin: 20px 10px;
+  text-align: right;
+}
+.nav-links:hover {
+  background-color: #feaf00;
+  color: #242121;
+}
+.search {
+  margin: 20px 400px;
 }
