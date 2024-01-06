@@ -123,6 +123,25 @@ header a {
   margin-left: 150px;
 }
 
+.error {
+  color: var(--error);
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.btn {
+  border-color: #feaf00;
+  color: #feaf00;
+  margin-top: 10px;
+}
+.btn:hover {
+  background-color: #feaf00;
+  color: #242121;
+  border-color: #feaf00;
+}
+
 /*aboutus*/
 
 .about-us {
@@ -141,7 +160,12 @@ header a {
   line-height: 1.5;
   color: #666;
 }
-
+.about-us img.team-photo {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+}
 
 
 /*contactus*/
@@ -153,7 +177,7 @@ header a {
 }
 
 .contact-us h2 {
-  color: #333;
+  color: #e2dfdf;
 }
 
 .contact-us p {
@@ -172,7 +196,7 @@ header a {
 }
 
 .contact-us strong {
-  color: #333;
+  color: #575555;
 }
 
 .social-media-links {
@@ -190,3 +214,4 @@ header a {
   height: 30px;
   border-radius: 50%;
 }
+

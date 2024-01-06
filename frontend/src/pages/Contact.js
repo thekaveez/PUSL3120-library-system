@@ -16,7 +16,7 @@ const Contact = () => {
           <strong>Email:</strong> info@librarymanagementsystem.com
         </li>
         <li>
-          <strong>Phone:</strong> +1 (555) 123-4567
+          <strong>Phone:</strong> +94 (77) 90 41 41 3
         </li>
       </ul>
       <p>
@@ -27,7 +27,7 @@ const Contact = () => {
         <br />
         Library Management System Headquarters
         <br />
-        123 Main Street, Cityville, Country
+        Green Hostel, Homagama, Sri Lanka
       </p>
       <p>
         Connect with us on social media:

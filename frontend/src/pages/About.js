@@ -22,6 +22,7 @@ const About = () => {
       <p>
         Together, we strive to create a library management system that not only meets but exceeds the expectations of our users. Whether you are a student, faculty member, or library staff, we are here to make your library experience seamless and enjoyable.
       </p>
+      {/*<img src="https://imgbob.co/i/S6mn.jpeg" alt="Our Team" className="team-photo" />*/}
     </div>
   );
 };
