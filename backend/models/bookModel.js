@@ -36,6 +36,11 @@ const bookSchema = new Schema(
       type: String,
       required: true,
     },
+    // memberID: {
+    //   ////
+    //   type: String,
+    //   required: true,
+    // },
   },
   { timestamps: true }
 );
