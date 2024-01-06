@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import Page1 from './pages/Page1';
-import Page2 from './pages/Page2';
-import Page3 from './pages/Page3';
 import './App.css';
+import Dashboard from './pages/Dashboard';
+import Books from './pages/Books';
+import IssuedBooks from './pages/IssuedBooks';
+import ReturnedBooks from './pages/ReturnedBooks';
+import Students from './pages/Students';
 
 const App = () => {
     const [currentPage, setCurrentPage] = useState(null);
@@ -14,11 +16,15 @@ const App = () => {
     const renderPage = () => {
         switch (currentPage) {
             case 'Page1':
-                return <Page1/>;
+                return <Dashboard/>;
             case 'Page2':
-                return <Page2/>;
+                return <Books/>;
             case 'Page3':
-                return <Page3/>;
+                return <IssuedBooks/>;
+            case 'Page4':
+                    return <ReturnedBooks/>;
+            case 'Page5':
+                        return <Students/>;    
             default:
                 return null;
         }
