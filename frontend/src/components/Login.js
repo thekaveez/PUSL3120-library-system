@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLogin } from "../hooks/useLogin";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -7,11 +8,12 @@ import Form from "react-bootstrap/Form";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { login, error, isLoading } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(email, password);
+    await login(email, password);
   };
 
   return (
@@ -36,9 +38,10 @@ const Login = () => {
           value={password}
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" disabled={isLoading}>
         Login
       </Button>
+      {error && <div className="alert alert-danger error">{error}</div>}
       <Form.Text className="sm-text">
         I don't have an account <Link to={"/register "}>Register</Link>
       </Form.Text>

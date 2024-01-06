@@ -122,3 +122,119 @@ header a {
   font-size: 30px;
   margin-left: 150px;
 }
+
+.error {
+  color: var(--error);
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.btnlogout {
+  border-color: #feaf00;
+  color: #feaf00;
+  margin-top: 10px;
+}
+.btnlogout:hover {
+  background-color: #feaf00;
+  color: #242121;
+  border-color: #feaf00;
+}
+
+/* User Profile */
+
+.profile {
+  width: 500px;
+  padding: 50px;
+  background: #292828;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  color: #cac4c4;
+}
+
+.profileForm {
+  margin-top: 30px;
+}
+
+.input {
+  margin-top: 20px;
+}
+
+/* modal */
+
+.btn_modal_close {
+  background-color: #feaf00;
+}
+
+/*aboutus*/
+
+.about-us {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.about-us h2 {
+  color: #d6d5d5;
+}
+
+.about-us p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+.about-us img.team-photo {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+/*contactus*/
+.contact-us {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-us h2 {
+  color: #e2dfdf;
+}
+
+.contact-us p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.contact-us ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-us li {
+  margin-bottom: 10px;
+}
+
+.contact-us strong {
+  color: #575555;
+}
+
+.social-media-links {
+  margin-top: 20px;
+}
+
+.social-media-links a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Style the social media icons as needed */
+.social-media-links img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

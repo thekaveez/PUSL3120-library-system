@@ -1,4 +1,6 @@
 const express = require("express");
+const cors = require("cors");
+
 const {
   getMember,
   loginMember,
@@ -7,6 +9,8 @@ const {
 } = require("../controllers/memberController");
 
 const router = express.Router();
+
+router.use(cors());
 
 // GET single member
 router.get("/:id", getMember);
