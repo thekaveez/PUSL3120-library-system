@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 
-const Page1 = () => {
+const Books = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
 
@@ -132,4 +132,4 @@ const Page1 = () => {
   );
 };
 
-export default Page1;
+export default Books;
