@@ -31,6 +31,7 @@ const loginMember = async (req, res) => {
     const token = createToken(member.id);
     res.status(200).json({
       msg: "Member logged in successfully",
+      email,
       token,
     });
   } catch (error) {
@@ -54,6 +55,8 @@ const addMember = async (req, res) => {
     const token = createToken(member.id);
     res.status(200).json({
       msg: "Member added successfully",
+      email,
+      firstName,
       token,
     });
   } catch (error) {
