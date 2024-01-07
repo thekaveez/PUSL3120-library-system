@@ -1,11 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import  {useEffect, useState}  from "react";
+import { faPlus,faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Modal from "react-modal";
+
+
+
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 const IssuedBooks = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
+  const [setAddNewBookModalIsOpen] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+  };
 
   const handleEdit = (book) => {
     setSelectedBook(book);
@@ -13,9 +24,17 @@ const IssuedBooks = () => {
     console.log(`Edit book with ID ${book.id}`);
   };
 
-  // const handleDelete = (bookId) => {
-  //   console.log(`Delete book with ID ${bookId}`);
-  // };
+  //const handleDelete = (bookId) => {
+    //console.log(`Delete book with ID ${bookId}`);
+  //};
+
+  const openAddNewBookModal = () => {
+    setAddNewBookModalIsOpen(true);
+  };
+
+   const closeAddNewBookModal = () => {
+     setAddNewBookModalIsOpen(false);
+   };
 
   const handleReturn = (book) => {
     console.log(`Return book with ID ${book.id}`);
@@ -30,7 +49,7 @@ const IssuedBooks = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch("/api/books");
+        const response = await fetch("/api/issuedbooks");
         if (!response.ok) {
           throw Error("Failed to fetch books");
         }
@@ -45,6 +64,7 @@ const IssuedBooks = () => {
 
   return (
     <div className={"main_books container_flex_col"}>
+     <Button variant ='warning'>ABC</Button>
       <div className={"books_header"}></div>
       <div className={"books_table_section"}>
         <table>
@@ -63,9 +83,9 @@ const IssuedBooks = () => {
               books.map((book) => (
                 <tr key={book.id}>
                   <td>{book.bookName}</td>
-                  <td>{book.author}</td>
-                  <td>{book.isbn}</td>
-                  <td>{book.publishedDate}</td>
+                  <td>{book.memberID}</td>
+                  <td>{book.issuedDate}</td>
+                  <td>{book.dueDate}</td>
                   <td>
                     <button className={"btn_books"} onClick={() => handleEdit(book)}>
                       <FontAwesomeIcon icon={faEdit} />
@@ -82,6 +102,13 @@ const IssuedBooks = () => {
                       <FontAwesomeIcon icon={faTrashAlt} />
                     </button>
                   </td> */}
+                  <button
+                    className={"btn_books btn_add_new_book"}
+                    onClick={openAddNewBookModal}
+                  >
+                    <FontAwesomeIcon icon={faPlus} />
+                    Issue New Book
+                  </button>
                 </tr>
               ))}
           </tbody>
@@ -90,13 +117,49 @@ const IssuedBooks = () => {
 
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false}>
         <div>
-          <h2>Edit Book</h2>
+          {/* <h2>Edit Book</h2> */}
           {selectedBook && (
             <div>
-              <p> Book Name: {selectedBook.bookName}</p>
-              <p>Author: {selectedBook.author}</p>
-              <p>ISBN Number: {selectedBook.isbn}</p>
-              <p>Added Date: {selectedBook.publishedDate}</p>
+               <Form className="signup" >
+      <Form.Text className="register">EDIT ISSUED BOOK</Form.Text>
+      <Form.Group className="mb-3 firstname" controlId="formBasicFirstName">
+        <Form.Label>Book Name :-</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter Your First Name"
+          
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicLastName">
+        <Form.Label>Member ID :-</Form.Label>
+        <Form.Control
+          type="number"
+          placeholder="Enter Your Book ID"
+
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Issued Date :-</Form.Label>
+        <Form.Control
+          type="date"
+          placeholder=""
+          
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicUniversityID">
+        <Form.Label>Due Date :-</Form.Label>
+        <Form.Control
+          type="date"
+          placeholder=""
+          
+        />
+     
+      </Form.Group>
+      <Button variant="primary" type="submit" >
+        Submit
+      </Button>
+    </Form>
+
               <button className={"btn_modal_close"} onClick={closeModal}>
                 Close
               </button>

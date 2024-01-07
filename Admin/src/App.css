@@ -180,3 +180,96 @@ button {
 
 
 
+
+/* signup */
+.signup {
+    margin: 0 auto;
+    width: 500px;
+    padding: 50px;
+    background: #A7A6A3;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #242121;
+  }
+  .firstname {
+    margin-top: 20px;
+    text-align: left;
+    margin: 30px 0;
+  }
+  .mb-3 {
+    margin-top: 20px;
+    text-align: left;
+    margin: 30px 0;
+  }
+  
+  .signup button {
+    width: 100%;
+    background-color: #feaf00;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .signup button:hover {
+    background-color: #dd9701f5;
+    color: #242121;
+  }
+  .register {
+    font-size: 30px;
+    margin-left: 120px;
+  }
+  .sm-text {
+    margin-left: 90px;
+  }
+  .sm-text a {
+    text-decoration: none;
+  }
+  .logintxt {
+    font-size: 30px;
+    margin-left: 150px;
+  }
+  
+  .error {
+    color: var(--error);
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+  
+  .btnlogout {
+    border-color: #feaf01;
+    color: #feaf00;
+    margin-top: 10px;
+  }
+  .btnlogout:hover {
+    background-color: #feaf00;
+    color: #242121;
+    border-color: #feaf00;
+  }
+
+
+  .btn_add_new_book {
+    background-color: #feaf00; /* Set your desired background color */
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px; /* Adjust padding to make it smaller */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* Adjust font size to make it smaller */
+    position: fixed; /* Change to fixed position */
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    width: 150px; /* Allow the button to adjust its width based on content */
+  }
+  
+  .btn_add_new_book:hover {
+    background-color: #c68700; /* Set your desired hover color */
+  }
+  
+  /* FontAwesome icon styles */
+  .btn_add_new_book svg {
+    margin-right: 6px; /* Adjust the spacing between the icon and text */
+  }
