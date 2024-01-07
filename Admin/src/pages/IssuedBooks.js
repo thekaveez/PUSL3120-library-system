@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 
 const IssuedBooks = () => {
@@ -13,9 +13,9 @@ const IssuedBooks = () => {
     console.log(`Edit book with ID ${book.id}`);
   };
 
-  const handleDelete = (bookId) => {
-    console.log(`Delete book with ID ${bookId}`);
-  };
+  // const handleDelete = (bookId) => {
+  //   console.log(`Delete book with ID ${bookId}`);
+  // };
 
   const handleReturn = (book) => {
     console.log(`Return book with ID ${book.id}`);
@@ -30,7 +30,7 @@ const IssuedBooks = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch("/api/books");
+        const response = await fetch("/api/issuedbooks");
         if (!response.ok) {
           throw Error("Failed to fetch books");
         }
@@ -63,17 +63,23 @@ const IssuedBooks = () => {
               books.map((book) => (
                 <tr key={book.id}>
                   <td>{book.bookName}</td>
-                  <td>{book.author}</td>
-                  <td>{book.isbn}</td>
-                  <td>{book.publishedDate}</td>
+                  <td>{book.memberID}</td>
+                  <td>{book.issuedDate}</td>
+                  <td>{book.dueDate}</td>
                   <td>
-                    <button className={"btn_books"} onClick={() => handleEdit(book)}>
+                    <button
+                      className={"btn_books"}
+                      onClick={() => handleEdit(book)}
+                    >
                       <FontAwesomeIcon icon={faEdit} />
                     </button>
                   </td>
                   <td>
                     {/* Return button */}
-                    <button className={"btn_books btn_return"} onClick={() => handleReturn(book)}>
+                    <button
+                      className={"btn_books btn_return"}
+                      onClick={() => handleReturn(book)}
+                    >
                       Return
                     </button>
                   </td>
@@ -88,7 +94,11 @@ const IssuedBooks = () => {
         </table>
       </div>
 
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false}>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        ariaHideApp={false}
+      >
         <div>
           <h2>Edit Book</h2>
           {selectedBook && (
