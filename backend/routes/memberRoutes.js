@@ -6,6 +6,7 @@ const {
   loginMember,
   addMember,
   updateMember,
+  // getMemberCount,
 } = require("../controllers/memberController");
 
 const router = express.Router();
@@ -14,6 +15,8 @@ router.use(cors());
 
 // GET single member
 router.get("/:id", getMember);
+
+// router.get("/countMember", getMemberCount);
 
 //login
 router.post("/login", loginMember);
