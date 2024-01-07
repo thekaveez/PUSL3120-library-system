@@ -13,9 +13,9 @@ const IssuedBooks = () => {
     console.log(`Edit book with ID ${book.id}`);
   };
 
-  const handleDelete = (bookId) => {
-    console.log(`Delete book with ID ${bookId}`);
-  };
+  // const handleDelete = (bookId) => {
+  //   console.log(`Delete book with ID ${bookId}`);
+  // };
 
   const handleReturn = (book) => {
     console.log(`Return book with ID ${book.id}`);
