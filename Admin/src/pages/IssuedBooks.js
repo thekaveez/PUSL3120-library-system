@@ -159,6 +159,7 @@ const IssuedBooks = () => {
         Submit
       </Button>
     </Form>
+
               <button className={"btn_modal_close"} onClick={closeModal}>
                 Close
               </button>
