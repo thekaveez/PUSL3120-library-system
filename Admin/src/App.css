@@ -236,7 +236,7 @@ button {
     margin-bottom: 0px;
     text-align: center;
   }
-  
+
   .btnlogout {
     border-color: #feaf01;
     color: #feaf00;
@@ -273,3 +273,18 @@ button {
   .btn_add_new_book svg {
     margin-right: 6px; /* Adjust the spacing between the icon and text */
   }
+
+  /* issued book page return button*/
+  .btn_custom {
+  background-color: #feaf00; /* Green background */
+  color: white; /* White text */
+  border: 2px solid #feaf00; /* Green border */
+  padding: 10px 20px; /* Padding */
+  cursor: pointer; /* Pointer cursor */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.btn_custom:hover {
+  background-color: #C59400;
+  color: white;
+}
