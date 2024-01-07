@@ -143,3 +143,43 @@ button {
 
 
 /*----------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+/* dashboard stylings */
+/* Add these styles to your CSS file */
+.word-box1,
+.word-box2,
+.word-box3,
+.word-box4 {
+  background-color: #FEAF00;
+  color: #ffffff;
+  padding: 60px;
+  border: 2px solid #FEAF00;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.word-box1:hover,
+.word-box2:hover,
+.word-box3:hover,
+.word-box4:hover {
+  background-color: #c0392b;
+  cursor: pointer;
+}
+
+/* Add margin-bottom to create space between word boxes */
+.word-box1,
+.word-box2,
+.word-box3 {
+  margin-bottom: 10px;
+}
+
+/*----------------------------------------------------------------------------------*/

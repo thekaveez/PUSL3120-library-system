@@ -1,9 +1,31 @@
 const Dashboard = () => {
   return (
-      <div>
-          <h2>Page 3</h2>
-          <p>Content for Page 3</p>
-      </div>
+    <div>
+      <h1>Dashboard</h1>
+      <table>
+        <td>
+          <tr>
+            <div className="word-box1">
+              <p>Student</p>
+            </div>
+          </tr>
+        </td>
+        <td>
+          <tr>
+            <div className="word-box2">
+              <p>Books</p>
+            </div>
+          </tr>
+        </td>
+        <td>
+          <tr>
+            <div className="word-box3">
+              <p>Issued</p>
+            </div>
+          </tr>
+        </td>
+      </table>
+    </div>
   );
 };
 
