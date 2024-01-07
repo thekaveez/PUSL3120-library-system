@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 
 const bookRoutes = require("./routes/bookRoutes");
 const memberRoutes = require("./routes/memberRoutes");
+const issuedbookRoute = require("./routes/issuedbookRoutes");
+const returnbookRoute = require("./routes/returnbookRoutes");
 
 //express app
 const app = express();
@@ -17,6 +19,8 @@ app.use((req, res, next) => {
 //routes
 app.use("/api/books", bookRoutes);
 app.use("/api/members", memberRoutes);
+app.use("/api/issuedbooks", issuedbookRoute);
+app.use("/api/returnbook", returnbookRoute);
 
 //connect to mongodb & listen for requests
 mongoose
