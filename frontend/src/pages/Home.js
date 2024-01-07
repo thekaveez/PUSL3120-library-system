@@ -69,17 +69,34 @@ const Home = () => {
         ariaHideApp={false}
       >
         <div>
-          <h2>Edit Book</h2>
           {selectedBook && (
-            <div>
-              <p> Book Name: {selectedBook.bookName}</p>
-              <p>Author: {selectedBook.author}</p>
-              <p>ISBN Number: {selectedBook.isbn}</p>
-              <p>Added Date: {selectedBook.addedDate}</p>
-              <button className={"btn_modal_close"} onClick={closeModal}>
-                Close
-              </button>
-            </div>
+            <>
+              <div className="App">
+                <div className="details">
+                  <div className="image">
+                    <img src={selectedBook.image} alt={selectedBook.bookName} />
+                  </div>
+                  <div>
+                    <h1 className="App-header">{selectedBook.bookName}</h1>
+                    <div className="App-book-details">
+                      <ul>
+                        <li>Author: {selectedBook.author}</li>
+                        <li>Publisher: {selectedBook.publisher}</li>
+                        <li>Publication Year:{selectedBook.publishedDate}</li>
+                        <li>ISBN: {selectedBook.isbn}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="desc">{selectedBook.description}</p>
+              </div>
+              <div>
+                <button className={"btn_modal_close"} onClick={closeModal}>
+                  Close
+                </button>
+              </div>
+            </>
           )}
         </div>
       </Modal>
