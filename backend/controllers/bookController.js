@@ -10,6 +10,16 @@ const getBooks = async (req, res) => {
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
+  
+};
+const getBooksCount = async (req, res) => {
+
+  try {
+    const booksCount = await Book.countDocuments({});
+    res.status(200).json({ count: booksCount });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
 
 // post book
@@ -60,6 +70,7 @@ const getBook = async (req, res) => {
 };
 
 module.exports = {
+  getBooksCount,
   getBooks,
   addBook,
   getBook,

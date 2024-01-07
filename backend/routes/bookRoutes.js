@@ -1,5 +1,5 @@
 const express = require("express");
-const { addBook, getBook, getBooks } = require("../controllers/bookController");
+const { addBook, getBook, getBooks, getBooksCount } = require("../controllers/bookController");
 // const requireAuth = require("../middleware/requireAuth");
 
 const router = express.Router();
@@ -8,6 +8,8 @@ const router = express.Router();
 
 // GET all books
 router.get("/", getBooks);
+
+router.get("/bookCount", getBooksCount);
 
 // POST book
 router.post("/", addBook);
