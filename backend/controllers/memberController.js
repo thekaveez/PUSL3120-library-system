@@ -38,6 +38,8 @@ const loginMember = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+
 // post member //signup
 const addMember = async (req, res) => {
   const { firstName, lastName, email, universityID, password } = req.body;
@@ -81,6 +83,7 @@ const updateMember = async (req, res) => {
 };
 
 module.exports = {
+  
   getMember,
   loginMember,
   addMember,
