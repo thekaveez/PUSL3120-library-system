@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
 
     if (email === "admin@email.com" && password === "Admin123!") {
-      window.location = "https://www.google.com/";
+      window.location = "https://admin-deploy-ten.vercel.app/";
     }
 
     await login(email, password);
