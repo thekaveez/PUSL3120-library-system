@@ -60,8 +60,8 @@ const ReturnedBooks = () => {
               books.map((book) => (
                 <tr key={book.id}>
                   <td>{book.bookName}</td>
-                  <td>{book.author}</td>
-                  <td>{book.isbn}</td>
+                  <td>{book.memberID}</td>
+                  <td>{book.issuedDate}</td>
                   <td>{book.publishedDate}</td>
                   <td>
                     <br></br>
