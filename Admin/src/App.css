@@ -48,7 +48,7 @@ body {
 .header_left {
   width: 1.2%;
   height: 25%;
-  background-color: yellow;
+  background-color: #feaf00;
 }
 
 .header_title {
@@ -141,10 +141,58 @@ button {
 /*----------------------------------------------------------------------------------*/
 /* dashboard stylings */
 /* Add these styles to your CSS file */
-.word-box1,
-.word-box2,
-.word-box3,
-.word-box4 {
+.word-box1 {
+  background-color: #baf4fa;
+  color: #ffffff;
+  padding: 60px;
+  border: 2px solid #baf4fa;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.word-box2 {
+  background-color: #ffb9e5;
+  color: #ffffff;
+  padding: 60px;
+  border: 2px solid #ffb9e5;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.word-box3 {
+  background-color: #fde188;
+  color: #ffffff;
+  padding: 60px;
+  border: 2px solid #fde188;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* .word-box4 {
   background-color: #feaf00;
   color: #ffffff;
   padding: 60px;
@@ -160,15 +208,24 @@ button {
   font-weight: bold;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.word-box1:hover,
-.word-box2:hover,
-.word-box3:hover,
-.word-box4:hover {
+} */
+/* 
+.word-box1:hover {
   background-color: #feaf00;
   cursor: pointer;
 }
+.word-box2:hover {
+  background-color: #feaf00;
+  cursor: pointer;
+}
+.word-box3:hover {
+  background-color: #feaf00;
+  cursor: pointer;
+} */
+/* .word-box4:hover {
+  background-color: #feaf00;
+  cursor: pointer;
+} */
 
 /* Add margin-bottom to create space between word boxes */
 .word-box1,
@@ -282,9 +339,4 @@ button {
 .btn_custom:hover {
   background-color: #c59400;
   color: white;
-}
-
-/* table */
-.table {
-  background-color: #a7a6a3;
 }
