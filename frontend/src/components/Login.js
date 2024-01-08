@@ -13,6 +13,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (email === "admin@email.com" && password === "Admin123!") {
+      window.location = "https://www.google.com/";
+    }
+
     await login(email, password);
   };
 

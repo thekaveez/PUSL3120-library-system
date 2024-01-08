@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
-import {
-  faPlus,
-  faEdit,
-  faTrashAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Modal from "react-modal";
+import React, { useEffect, useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Modal from "react-modal";
 
 const IssuedBooks = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -40,9 +37,9 @@ const IssuedBooks = () => {
     setAddNewBookModalIsOpen(false);
   };
 
-  const openReturnBookModal = () => {
-    setReturnBookModalIsOpen(true);
-  };
+  // const openReturnBookModal = () => {
+  //   setReturnBookModalIsOpen(true);
+  // };
 
   const closeReturnBookModal = () => {
     setReturnBookModalIsOpen(false);
@@ -72,8 +69,9 @@ const IssuedBooks = () => {
 
   return (
     <div className={"main_books container_flex_col"}>
-      <Button variant="warning">ABC</Button>
-      <div className={"books_header"}></div>
+      <div className={"books_header"}>
+        <h1>Issued Books</h1>
+      </div>
       <div className={"books_table_section"}>
         <table>
           <thead>
@@ -124,55 +122,50 @@ const IssuedBooks = () => {
       </div>
 
       {/* Edit Book Modal */}
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false}>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        ariaHideApp={false}
+      >
         <div>
           {selectedBook && (
             <div>
-               <Form className="signup" onSubmit={handleSubmit}>
-        
-        <Form.Text className="register">EDIT ISSUED BOOK</Form.Text>
-        <Form.Group className="mb-3 firstname" controlId="formBasicFirstName">
-          <Form.Label>Book Name :-</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Your First Name"
-            
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicLastName">
-          <Form.Label>Member ID :-</Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Enter Your Book ID"
-  
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Issued Date :-</Form.Label>
-          <Form.Control
-            type="date"
-            placeholder=""
-            
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicUniversityID">
-          <Form.Label>Due Date :-</Form.Label>
-          <Form.Control
-            type="date"
-            placeholder=""
-            
-          />
-       
-        </Form.Group>
-        {/* <Button variant="primary" type="submit" >
+              <Form className="signup" onSubmit={handleSubmit}>
+                <Form.Text className="register">EDIT ISSUED BOOK</Form.Text>
+                <Form.Group
+                  className="mb-3 firstname"
+                  controlId="formBasicFirstName"
+                >
+                  <Form.Label>Book Name :-</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter Your First Name"
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicLastName">
+                  <Form.Label>Member ID :-</Form.Label>
+                  <Form.Control
+                    type="number"
+                    placeholder="Enter Your Book ID"
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Issued Date :-</Form.Label>
+                  <Form.Control type="date" placeholder="" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicUniversityID">
+                  <Form.Label>Due Date :-</Form.Label>
+                  <Form.Control type="date" placeholder="" />
+                </Form.Group>
+                {/* <Button variant="primary" type="submit" >
           Submit
         </Button> */}
-      
-              {/* ... */}
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-            </Form>
+
+                {/* ... */}
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </Form>
               <button className={"btn_modal_close"} onClick={closeModal}>
                 Close
               </button>
@@ -188,55 +181,37 @@ const IssuedBooks = () => {
         ariaHideApp={false}
       >
         <div>
-        <Form className="signup" onSubmit={handleSubmit}>
-        
-        <Form.Text className="register">ISSUE NEW BOOK</Form.Text>
-        <Form.Group className="mb-3 firstname" controlId="formBasicFirstName">
-          <Form.Label>Book Name :-</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Your First Name"
-            
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicLastName">
-          <Form.Label>Member ID :-</Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Enter Your Book ID"
-  
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Issued Date :-</Form.Label>
-          <Form.Control
-            type="date"
-            placeholder=""
-            
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicUniversityID">
-          <Form.Label>Due Date :-</Form.Label>
-          <Form.Control
-            type="date"
-            placeholder=""
-            
-          />
-       
-        </Form.Group>
-        {/* <Button variant="primary" type="submit" >
+          <Form className="signup" onSubmit={handleSubmit}>
+            <Form.Text className="register">ISSUE NEW BOOK</Form.Text>
+            <Form.Group
+              className="mb-3 firstname"
+              controlId="formBasicFirstName"
+            >
+              <Form.Label>Book Name :-</Form.Label>
+              <Form.Control type="text" placeholder="Enter Your First Name" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicLastName">
+              <Form.Label>Member ID :-</Form.Label>
+              <Form.Control type="number" placeholder="Enter Your Book ID" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Issued Date :-</Form.Label>
+              <Form.Control type="date" placeholder="" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicUniversityID">
+              <Form.Label>Due Date :-</Form.Label>
+              <Form.Control type="date" placeholder="" />
+            </Form.Group>
+            {/* <Button variant="primary" type="submit" >
           Submit
         </Button> */}
-      
-              {/* ... */}
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-            </Form>
-          <button
-            className={"btn_modal_close"}
-            onClick={closeAddNewBookModal}
-          >
+
+            {/* ... */}
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+          <button className={"btn_modal_close"} onClick={closeAddNewBookModal}>
             Close
           </button>
         </div>
@@ -250,54 +225,36 @@ const IssuedBooks = () => {
       >
         <div>
           <Form className="signup" onSubmit={handleSubmit}>
-        
-      <Form.Text className="register">RETURN BOOK</Form.Text>
-      <Form.Group className="mb-3 firstname" controlId="formBasicFirstName">
-        <Form.Label>Book Name :-</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter Your First Name"
-          
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicLastName">
-        <Form.Label>Member ID :-</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="Enter Your Book ID"
-
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Issued Date :-</Form.Label>
-        <Form.Control
-          type="date"
-          placeholder=""
-          
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicUniversityID">
-        <Form.Label>Returned Date :-</Form.Label>
-        <Form.Control
-          type="date"
-          placeholder=""
-          
-        />
-     
-      </Form.Group>
-      {/* <Button variant="primary" type="submit" >
+            <Form.Text className="register">RETURN BOOK</Form.Text>
+            <Form.Group
+              className="mb-3 firstname"
+              controlId="formBasicFirstName"
+            >
+              <Form.Label>Book Name :-</Form.Label>
+              <Form.Control type="text" placeholder="Enter Your First Name" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicLastName">
+              <Form.Label>Member ID :-</Form.Label>
+              <Form.Control type="number" placeholder="Enter Your Book ID" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Issued Date :-</Form.Label>
+              <Form.Control type="date" placeholder="" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicUniversityID">
+              <Form.Label>Due Date :-</Form.Label>
+              <Form.Control type="date" placeholder="" />
+            </Form.Group>
+            {/* <Button variant="primary" type="submit" >
         Submit
       </Button> */}
-    
+
             {/* ... */}
             <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>
-          <button
-            className={"btn_modal_close"}
-            onClick={closeReturnBookModal}
-          >
+          <button className={"btn_modal_close"} onClick={closeReturnBookModal}>
             Close
           </button>
         </div>
