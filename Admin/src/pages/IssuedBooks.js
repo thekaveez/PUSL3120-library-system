@@ -182,7 +182,7 @@ const IssuedBooks = () => {
       >
         <div>
           <Form className="signup" onSubmit={handleSubmit}>
-            <Form.Text className="register">EDIT ISSUED BOOK</Form.Text>
+            <Form.Text className="register">ISSUE NEW BOOK</Form.Text>
             <Form.Group
               className="mb-3 firstname"
               controlId="formBasicFirstName"
@@ -225,7 +225,7 @@ const IssuedBooks = () => {
       >
         <div>
           <Form className="signup" onSubmit={handleSubmit}>
-            <Form.Text className="register">EDIT ISSUED BOOK</Form.Text>
+            <Form.Text className="register">RETURN BOOK</Form.Text>
             <Form.Group
               className="mb-3 firstname"
               controlId="formBasicFirstName"
