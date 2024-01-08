@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { faPlus, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Modal from "react-modal";
+import React, { useEffect, useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Modal from "react-modal";
 
 const IssuedBooks = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);

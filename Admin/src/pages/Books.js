@@ -1,23 +1,7 @@
+import { faEdit, faPlus, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faTrashAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { useBooksContext } from "../context/booksContext";
-
-// const BooksContext = ({ book }) => {
-//   const { dispatch } = useBooksContext();
-
-//   const handleDelete = async () => {
-//     const response = await fetch("/api/books" + book._id, {
-//       method: "DELETE",
-//     });
-//     const json = await response.json();
-
-//     if (response.ok) {
-//       dispatch({ type: "DELETE_BOOK", payload: json });
-//     }
-//   };
-// };
 
 const AddNewBookModal = ({ isOpen, closeModal }) => {
   return (
