@@ -10,12 +10,10 @@ const getBooks = async (req, res) => {
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
-  
 };
 
 //books count
 const getBooksCount = async (req, res) => {
-
   try {
     const booksCount = await Book.countDocuments({});
     res.status(200).json({ count: booksCount });
@@ -71,7 +69,25 @@ const getBook = async (req, res) => {
   res.status(200).json(book);
 };
 
+//delete a book
+const deleteBook = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ msg: " No such a Book" });
+  }
+  // return res.status(200).json({ msg: "Book deleted successefully" });
+
+  const book = await Book.findByIdAndDelete(id);
+
+  if (!book) {
+    return res.status(404).json({ msg: "Book not found" });
+  }
+  res.status(200).json(book);
+};
+
 module.exports = {
+  deleteBook,
   getBooksCount,
   getBooks,
   addBook,

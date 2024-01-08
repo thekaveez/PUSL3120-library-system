@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Dashboard = () => {
   const [bookCount, setBookCount] = useState(null);
-  const [setError] = useState(null);
   const [studentsCount, setStudentsCount] = useState(null);
   const [issuedCount, setIssuedCount] = useState(null);
+  const [setError] = useState(null);
 
   //book count
   useEffect(() => {
@@ -73,21 +77,30 @@ const Dashboard = () => {
         <td>
           <tr>
             <div className="word-box1">
-              <p>Students Count : {studentsCount}</p>
+              <p>
+                <FontAwesomeIcon icon={faUsers} />
+                <br></br>Students Count: {studentsCount}
+              </p>
             </div>
           </tr>
         </td>
         <td>
           <tr>
             <div className="word-box2">
-              <p>Book Count : {bookCount}</p>
+              <p>
+                <FontAwesomeIcon icon={faBook} /> <br></br>Book Count:{" "}
+                {bookCount}
+              </p>
             </div>
           </tr>
         </td>
         <td>
           <tr>
             <div className="word-box3">
-              <p>Issued Count : {issuedCount} </p>
+              <p>
+                <FontAwesomeIcon icon={faClipboardCheck} />
+                <br></br>Issued : {issuedCount}
+              </p>
             </div>
           </tr>
         </td>

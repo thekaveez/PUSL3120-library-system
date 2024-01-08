@@ -37,7 +37,23 @@ const getStudent = async (req, res) => {
   res.status(200).json(book);
 };
 
+//delete student
+const deleteStudent = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "Student not found" });
+  }
+  const student = await Student.findByIdAndDelete(id);
+
+  if (!student) {
+    return res.status(404).json({ msg: "Student found" });
+  }
+  res.status(200).json(student);
+};
+
 module.exports = {
+  deleteStudent,
   getStudentsCount,
   getStudents,
   getStudent,

@@ -48,7 +48,7 @@ body {
 .header_left {
   width: 1.2%;
   height: 25%;
-  background-color: yellow;
+  background-color: #feaf00;
 }
 
 .header_title {
@@ -141,14 +141,11 @@ button {
 /*----------------------------------------------------------------------------------*/
 /* dashboard stylings */
 /* Add these styles to your CSS file */
-.word-box1,
-.word-box2,
-.word-box3,
-.word-box4 {
-  background-color: #FEAF00;
+.word-box1 {
+  background-color: #baf4fa;
   color: #ffffff;
   padding: 60px;
-  border: 2px solid #FEAF00;
+  border: 2px solid #baf4fa;
   border-radius: 10px;
   margin-top: 20px;
   width: 200px;
@@ -161,14 +158,74 @@ button {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.word-box1:hover,
-.word-box2:hover,
-.word-box3:hover,
-.word-box4:hover {
-  background-color: #FEAF00;
+.word-box2 {
+  background-color: #ffb9e5;
+  color: #ffffff;
+  padding: 60px;
+  border: 2px solid #ffb9e5;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.word-box3 {
+  background-color: #fde188;
+  color: #ffffff;
+  padding: 60px;
+  border: 2px solid #fde188;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* .word-box4 {
+  background-color: #feaf00;
+  color: #ffffff;
+  padding: 60px;
+  border: 2px solid #feaf00;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+/* 
+.word-box1:hover {
+  background-color: #feaf00;
   cursor: pointer;
 }
+.word-box2:hover {
+  background-color: #feaf00;
+  cursor: pointer;
+}
+.word-box3:hover {
+  background-color: #feaf00;
+  cursor: pointer;
+} */
+/* .word-box4:hover {
+  background-color: #feaf00;
+  cursor: pointer;
+} */
 
 /* Add margin-bottom to create space between word boxes */
 .word-box1,
@@ -177,105 +234,100 @@ button {
   margin-bottom: 10px;
 }
 
-
-
-
-
 /* signup */
 .signup {
-    margin: 0 auto;
-    width: 500px;
-    padding: 50px;
-    background: #A7A6A3;
-    border-radius: 10px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    color: #242121;
-  }
-  .firstname {
-    margin-top: 20px;
-    text-align: left;
-    margin: 30px 0;
-  }
-  .mb-3 {
-    margin-top: 20px;
-    text-align: left;
-    margin: 30px 0;
-  }
-  
-  .signup button {
-    width: 100%;
-    background-color: #feaf00;
-    border: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .signup button:hover {
-    background-color: #dd9701f5;
-    color: #242121;
-  }
-  .register {
-    font-size: 30px;
-    margin-left: 120px;
-  }
-  .sm-text {
-    margin-left: 90px;
-  }
-  .sm-text a {
-    text-decoration: none;
-  }
-  .logintxt {
-    font-size: 30px;
-    margin-left: 150px;
-  }
-  
-  .error {
-    color: var(--error);
-    font-size: 15px;
-    margin-top: 5px;
-    margin-bottom: 0px;
-    text-align: center;
-  }
+  margin: 0 auto;
+  width: 500px;
+  padding: 50px;
+  background: #a7a6a3;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #242121;
+}
+.firstname {
+  margin-top: 20px;
+  text-align: left;
+  margin: 30px 0;
+}
+.mb-3 {
+  margin-top: 20px;
+  text-align: left;
+  margin: 30px 0;
+}
 
-  .btnlogout {
-    border-color: #feaf01;
-    color: #feaf00;
-    margin-top: 10px;
-  }
-  .btnlogout:hover {
-    background-color: #feaf00;
-    color: #242121;
-    border-color: #feaf00;
-  }
+.signup button {
+  width: 100%;
+  background-color: #feaf00;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.signup button:hover {
+  background-color: #dd9701f5;
+  color: #242121;
+}
+.register {
+  font-size: 30px;
+  margin-left: 120px;
+}
+.sm-text {
+  margin-left: 90px;
+}
+.sm-text a {
+  text-decoration: none;
+}
+.logintxt {
+  font-size: 30px;
+  margin-left: 150px;
+}
 
+.error {
+  color: var(--error);
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  text-align: center;
+}
 
-  .btn_add_new_book {
-    background-color: #feaf00; /* Set your desired background color */
-    color: rgb(255, 255, 255);
-    border: none;
-    padding: 10px 20px; /* Adjust padding to make it smaller */
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px; /* Adjust font size to make it smaller */
-    position: fixed; /* Change to fixed position */
-    top: 10px;
-    right: 10px;
-    display: flex;
-    align-items: center;
-    width: 150px; /* Allow the button to adjust its width based on content */
-  }
-  
-  .btn_add_new_book:hover {
-    background-color: #c68700; /* Set your desired hover color */
-  }
-  
-  /* FontAwesome icon styles */
-  .btn_add_new_book svg {
-    margin-right: 6px; /* Adjust the spacing between the icon and text */
-  }
+.btnlogout {
+  border-color: #feaf01;
+  color: #feaf00;
+  margin-top: 10px;
+}
+.btnlogout:hover {
+  background-color: #feaf00;
+  color: #242121;
+  border-color: #feaf00;
+}
 
-  /* issued book page return button*/
-  .btn_custom {
+.btn_add_new_book {
+  background-color: #feaf00; /* Set your desired background color */
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px; /* Adjust padding to make it smaller */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px; /* Adjust font size to make it smaller */
+  position: fixed; /* Change to fixed position */
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  width: 150px; /* Allow the button to adjust its width based on content */
+}
+
+.btn_add_new_book:hover {
+  background-color: #c68700; /* Set your desired hover color */
+}
+
+/* FontAwesome icon styles */
+.btn_add_new_book svg {
+  margin-right: 6px; /* Adjust the spacing between the icon and text */
+}
+
+/* issued book page return button*/
+.btn_custom {
   background-color: #feaf00; /* Green background */
   color: white; /* White text */
   border: 2px solid #feaf00; /* Green border */
@@ -285,6 +337,20 @@ button {
 }
 
 .btn_custom:hover {
-  background-color: #C59400;
+  background-color: #c59400;
   color: white;
+}
+
+.btn-logout {
+  background-color: #d9534f; /* Red color for danger */
+  color: #fff; /* White text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-logout:hover {
+  background-color: #c9302c; /* Darker red color on hover */
 }

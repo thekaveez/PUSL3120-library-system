@@ -68,8 +68,9 @@ const IssuedBooks = () => {
 
   return (
     <div className={"main_books container_flex_col"}>
-      <Button variant="warning">ABC</Button>
-      <div className={"books_header"}></div>
+      <div className={"books_header"}>
+        <h1>Issued Books</h1>
+      </div>
       <div className={"books_table_section"}>
         <table>
           <thead>
