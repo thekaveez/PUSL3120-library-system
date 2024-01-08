@@ -13,17 +13,17 @@ const router = express.Router();
 // router.use(requireAuth);
 
 // GET all books
-router.get("/", getBooks);
+router.get("https://pusl-3120-library-system.vercel.app/", getBooks);
 
-router.get("/bookCount", getBooksCount);
+router.get("https://pusl-3120-library-system.vercel.app/bookCount", getBooksCount);
 
 // POST book
-router.post("/", addBook);
+router.post("https://pusl-3120-library-system.vercel.app/", addBook);
 
 //GET single book
-router.get("/:id", getBook);
+router.get("https://pusl-3120-library-system.vercel.app/:id", getBook);
 
 //delete book
-router.delete("/:id", deleteBook);
+router.delete("https://pusl-3120-library-system.vercel.app/:id", deleteBook);
 
 module.exports = router;
