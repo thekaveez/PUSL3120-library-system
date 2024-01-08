@@ -1,15 +1,18 @@
 const express = require("express");
 
-const { 
-    getIssuedbook,
-     addIssuedbook, 
-     getSingleissuedbook,
-      updateIssuedbook
+const {
+  addIssuedbook,
+  getSingleissuedbook,
+  updateIssuedbook,
+  getIssuedCount,
+  getIssuedbook,
 } = require("../controllers/issuedbookController");
 
 const router = express.Router();
 
 //get all issued book
+router.get("/issuedCount", getIssuedCount);
+
 router.get("/", getIssuedbook);
 
 //post issued book
@@ -22,4 +25,3 @@ router.get("/:id", getSingleissuedbook);
 router.patch("/:id", updateIssuedbook);
 
 module.exports = router;
-

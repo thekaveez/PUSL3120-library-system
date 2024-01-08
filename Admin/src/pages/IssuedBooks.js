@@ -1,18 +1,20 @@
 import { faEdit, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import Modal from "react-modal";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Modal from "react-modal";
 
 const IssuedBooks = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
-  const [setAddNewBookModalIsOpen] = useState(false);
+  const [addNewBookModalIsOpen, setAddNewBookModalIsOpen] = useState(false);
+  const [returnBookModalIsOpen, setReturnBookModalIsOpen] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Your form submission logic
   };
 
   const handleEdit = (book) => {
@@ -21,9 +23,11 @@ const IssuedBooks = () => {
     console.log(`Edit book with ID ${book.id}`);
   };
 
-  //const handleDelete = (bookId) => {
-  //console.log(`Delete book with ID ${bookId}`);
-  //};
+  const handleReturn = (book) => {
+    setSelectedBook(book);
+    setReturnBookModalIsOpen(true);
+    console.log(`Return book with ID ${book.id}`);
+  };
 
   const openAddNewBookModal = () => {
     setAddNewBookModalIsOpen(true);
@@ -33,8 +37,12 @@ const IssuedBooks = () => {
     setAddNewBookModalIsOpen(false);
   };
 
-  const handleReturn = (book) => {
-    console.log(`Return book with ID ${book.id}`);
+  // const openReturnBookModal = () => {
+  //   setReturnBookModalIsOpen(true);
+  // };
+
+  const closeReturnBookModal = () => {
+    setReturnBookModalIsOpen(false);
   };
 
   const closeModal = () => {
@@ -61,8 +69,9 @@ const IssuedBooks = () => {
 
   return (
     <div className={"main_books container_flex_col"}>
-      <Button variant="warning">ABC</Button>
-      <div className={"books_header"}></div>
+      <div className={"books_header"}>
+        <h1>Issued Books</h1>
+      </div>
       <div className={"books_table_section"}>
         <table>
           <thead>
@@ -92,19 +101,13 @@ const IssuedBooks = () => {
                     </button>
                   </td>
                   <td>
-                    {/* Return button */}
                     <button
-                      className={"btn_books btn_return"}
+                      className={"btn_books btn_return btn_custom"}
                       onClick={() => handleReturn(book)}
                     >
                       Return
                     </button>
                   </td>
-                  {/* <td>
-                    <button className={"btn_books"} onClick={() => handleDelete(book.id)}>
-                      <FontAwesomeIcon icon={faTrashAlt} />
-                    </button>
-                  </td> */}
                   <button
                     className={"btn_books btn_add_new_book"}
                     onClick={openAddNewBookModal}
@@ -118,16 +121,16 @@ const IssuedBooks = () => {
         </table>
       </div>
 
+      {/* Edit Book Modal */}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         ariaHideApp={false}
       >
         <div>
-          {/* <h2>Edit Book</h2> */}
           {selectedBook && (
             <div>
-              <Form className="signup">
+              <Form className="signup" onSubmit={handleSubmit}>
                 <Form.Text className="register">EDIT ISSUED BOOK</Form.Text>
                 <Form.Group
                   className="mb-3 firstname"
@@ -154,16 +157,106 @@ const IssuedBooks = () => {
                   <Form.Label>Due Date :-</Form.Label>
                   <Form.Control type="date" placeholder="" />
                 </Form.Group>
+                {/* <Button variant="primary" type="submit" >
+          Submit
+        </Button> */}
+
+                {/* ... */}
                 <Button variant="primary" type="submit">
                   Submit
                 </Button>
               </Form>
-
               <button className={"btn_modal_close"} onClick={closeModal}>
                 Close
               </button>
             </div>
           )}
+        </div>
+      </Modal>
+
+      {/* Add New Book Modal */}
+      <Modal
+        isOpen={addNewBookModalIsOpen}
+        onRequestClose={closeAddNewBookModal}
+        ariaHideApp={false}
+      >
+        <div>
+          <Form className="signup" onSubmit={handleSubmit}>
+            <Form.Text className="register">EDIT ISSUED BOOK</Form.Text>
+            <Form.Group
+              className="mb-3 firstname"
+              controlId="formBasicFirstName"
+            >
+              <Form.Label>Book Name :-</Form.Label>
+              <Form.Control type="text" placeholder="Enter Your First Name" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicLastName">
+              <Form.Label>Member ID :-</Form.Label>
+              <Form.Control type="number" placeholder="Enter Your Book ID" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Issued Date :-</Form.Label>
+              <Form.Control type="date" placeholder="" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicUniversityID">
+              <Form.Label>Due Date :-</Form.Label>
+              <Form.Control type="date" placeholder="" />
+            </Form.Group>
+            {/* <Button variant="primary" type="submit" >
+          Submit
+        </Button> */}
+
+            {/* ... */}
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+          <button className={"btn_modal_close"} onClick={closeAddNewBookModal}>
+            Close
+          </button>
+        </div>
+      </Modal>
+
+      {/* Return Book Modal */}
+      <Modal
+        isOpen={returnBookModalIsOpen}
+        onRequestClose={closeReturnBookModal}
+        ariaHideApp={false}
+      >
+        <div>
+          <Form className="signup" onSubmit={handleSubmit}>
+            <Form.Text className="register">EDIT ISSUED BOOK</Form.Text>
+            <Form.Group
+              className="mb-3 firstname"
+              controlId="formBasicFirstName"
+            >
+              <Form.Label>Book Name :-</Form.Label>
+              <Form.Control type="text" placeholder="Enter Your First Name" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicLastName">
+              <Form.Label>Member ID :-</Form.Label>
+              <Form.Control type="number" placeholder="Enter Your Book ID" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Issued Date :-</Form.Label>
+              <Form.Control type="date" placeholder="" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicUniversityID">
+              <Form.Label>Due Date :-</Form.Label>
+              <Form.Control type="date" placeholder="" />
+            </Form.Group>
+            {/* <Button variant="primary" type="submit" >
+        Submit
+      </Button> */}
+
+            {/* ... */}
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+          <button className={"btn_modal_close"} onClick={closeReturnBookModal}>
+            Close
+          </button>
         </div>
       </Modal>
     </div>

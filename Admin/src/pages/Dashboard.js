@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 
 const Dashboard = () => {
   const [bookCount, setBookCount] = useState(null);
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
   const [studentsCount, setStudentsCount] = useState(null);
+  const [issuedCount, setIssuedCount] = useState(null);
 
+  //book count
   useEffect(() => {
     const fetchBookCount = async () => {
       try {
@@ -22,8 +24,9 @@ const Dashboard = () => {
     };
 
     fetchBookCount();
-  }, []);
+  });
 
+  //student count
   useEffect(() => {
     const fetchStudentsCount = async () => {
       try {
@@ -41,7 +44,27 @@ const Dashboard = () => {
     };
 
     fetchStudentsCount();
-  }, []);
+  });
+
+  //issued count
+  useEffect(() => {
+    const fetchIssuedCount = async () => {
+      try {
+        const response = await fetch("/api/issuedbooks/issuedCount");
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setIssuedCount(data.count);
+        console.log(data);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    fetchIssuedCount();
+  });
 
   return (
     <div>
@@ -64,7 +87,7 @@ const Dashboard = () => {
         <td>
           <tr>
             <div className="word-box3">
-              <p>Issued</p>
+              <p>Issued Count : {issuedCount} </p>
             </div>
           </tr>
         </td>

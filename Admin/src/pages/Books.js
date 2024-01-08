@@ -1,7 +1,7 @@
+import { faEdit, faPlus, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faTrashAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const AddNewBookModal = ({ isOpen, closeModal }) => {
   // Add your form logic for adding a new book here

@@ -1,26 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+// import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ReturnedBooks = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedBook, setSelectedBook] = useState(null);
+  // const [ setModalIsOpen] = useState(false);
+  // const [ setSelectedBook] = useState(null);
   const [books, setBooks] = useState(null);
 
-  const handleEdit = (book) => {
-    setSelectedBook(book);
-    setModalIsOpen(true);
-    console.log(`Edit book with ID ${book.id}`);
-  };
+  // const handleEdit = (book) => {
+  //   setSelectedBook(book);
+  //   setModalIsOpen(true);
+  //   console.log(`Edit book with ID ${book.id}`);
+  // };
 
   const handleDelete = (bookId) => {
     console.log(`Delete book with ID ${bookId}`);
   };
 
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
+  // const closeModal = () => {
+  //   setModalIsOpen(false);
+  // };
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -48,7 +47,9 @@ const ReturnedBooks = () => {
           <thead>
             <tr>
               <th className={"col_1"}>Book Name</th>
-              <th classN ame={"col_2"}>Member ID</th>
+              <th classN ame={"col_2"}>
+                Member ID
+              </th>
               <th className={"col_3"}>Issued Date</th>
               <th className={"col_4"}>Returned Date</th>
               <th className={"col_5"}></th>
@@ -60,8 +61,8 @@ const ReturnedBooks = () => {
               books.map((book) => (
                 <tr key={book.id}>
                   <td>{book.bookName}</td>
-                  <td>{book.author}</td>
-                  <td>{book.isbn}</td>
+                  <td>{book.memberID}</td>
+                  <td>{book.issuedDate}</td>
                   <td>{book.publishedDate}</td>
                   <td>
                     <br></br>

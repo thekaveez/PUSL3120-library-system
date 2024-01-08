@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import React, { useEffect, useState } from "react";
 
 const Students = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -25,7 +24,7 @@ const Students = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch("/api/books");
+        const response = await fetch("/api/students");
         if (!response.ok) {
           throw Error("Failed to fetch books");
         }
@@ -59,10 +58,10 @@ const Students = () => {
             {books &&
               books.map((book) => (
                 <tr key={book.id}>
-                  <td>{book.bookName}</td>
-                  <td>{book.author}</td>
-                  <td>{book.isbn}</td>
-                  <td>{book.publishedDate}</td>
+                  <td>{book.firstName}</td>
+                  <td>{book.lastName}</td>
+                  <td>{book.universityID}</td>
+                  <td>{book.createdAt}</td>
                   <td>
                     <button
                       className={"btn_books"}
