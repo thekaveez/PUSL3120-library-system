@@ -46,11 +46,11 @@ const Students = () => {
         <table>
           <thead>
             <tr>
-              <th className={"col_1"}>Name</th>
-              <th className={"col_2"}>Email</th>
-              <th className={"col_3"}>University ID</th>
-              <th className={"col_4"}>Registration Date</th>
-              <th className={"col_5"}></th>
+              <th className={"col_1"}>First Name</th>
+              <th className={"col_2"}>Last Name</th>
+              <th className={"col_3"}>Email</th>
+              <th className={"col_4"}>University ID</th>
+              {/* <th className={"col_5"}>Registration Date</th> */}
               <th className={"col_6"}></th>
             </tr>
           </thead>
