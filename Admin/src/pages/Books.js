@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 
 const AddNewBookModal = ({ isOpen, closeModal }) => {
-  // Add your form logic for adding a new book here
   return (
     <Modal isOpen={isOpen} onRequestClose={closeModal} ariaHideApp={false}>
       <div>
@@ -28,9 +27,9 @@ const Books = () => {
     setEditModalIsOpen(true);
   };
 
-  const handleDelete = (bookId) => {
-    console.log(`Delete book with ID ${bookId}`);
-  };
+  // const handleDelete = (bookId) => {
+  //   console.log(`Delete book with ID ${bookId}`);
+  // };
 
   const closeModal = () => {
     setEditModalIsOpen(false);
@@ -58,6 +57,7 @@ const Books = () => {
   return (
     <div className={"main_books container_flex_col"}>
       <div className={"books_header"}>
+        <h1>Books</h1>
         <button
           className={"btn_books btn_add_new_book"}
           onClick={() => setAddNewBookModalIsOpen(true)}
@@ -97,7 +97,7 @@ const Books = () => {
                   <td>
                     <button
                       className={"btn_books"}
-                      onClick={() => handleDelete(book.id)}
+                      // onClick={() => handleDelete(book)}
                     >
                       <FontAwesomeIcon icon={faTrashAlt} />
                     </button>

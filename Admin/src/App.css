@@ -341,3 +341,16 @@ button {
   color: white;
 }
 
+.btn-logout {
+  background-color: #d9534f; /* Red color for danger */
+  color: #fff; /* White text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-logout:hover {
+  background-color: #c9302c; /* Darker red color on hover */
+}

@@ -7,6 +7,8 @@ const bookRoutes = require("./routes/bookRoutes");
 const memberRoutes = require("./routes/memberRoutes");
 const issuedbookRoute = require("./routes/issuedbookRoutes");
 const returnbookRoute = require("./routes/returnbookRoutes");
+const deleteBookRoute = require("./routes/bookRoutes");
+const deleteStudentRoute = require("./routes/studentRoutes");
 
 //express app
 const app = express();
@@ -19,6 +21,11 @@ app.use((req, res, next) => {
 });
 
 //routes
+//delete book
+app.use("/api/books", deleteBookRoute);
+//delete student
+app.use("/api/students", deleteStudentRoute);
+
 app.use("/api/students", studentRoutes);
 app.use("/api/books", bookRoutes);
 app.use("/api/members", memberRoutes);

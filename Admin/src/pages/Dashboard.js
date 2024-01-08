@@ -5,11 +5,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+
 const Dashboard = () => {
   const [bookCount, setBookCount] = useState(null);
-  const [setError] = useState(null);
   const [studentsCount, setStudentsCount] = useState(null);
   const [issuedCount, setIssuedCount] = useState(null);
+  const [setError] = useState(null);
 
   //book count
   useEffect(() => {
