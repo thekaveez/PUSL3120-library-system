@@ -1,45 +1,43 @@
-import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faPlus, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 
-const Books = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedBook, setSelectedBook] = useState(null);
+const AddNewBookModal = ({ isOpen, closeModal }) => {
+  return (
+    <Modal isOpen={isOpen} onRequestClose={closeModal} ariaHideApp={false}>
+      <div>
+        <h2>Add New Book</h2>
 
-  //   const bookData = [
-  //     {
-  //       id: 1,
-  //       name: "Book 1",
-  //       author: "Author 1",
-  //       isbn: "123456789",
-  //       addedDate: "2022-01-01",
-  //     },
-  //     {
-  //       id: 2,
-  //       name: "Book 2",
-  //       author: "Author 2",
-  //       isbn: "987654321",
-  //       addedDate: "2022-02-01",
-  //     },
-  //   ];
+        <button className={"btn_modal_close"} onClick={closeModal}>
+          Close
+        </button>
+      </div>
+    </Modal>
+  );
+};
+
+const Books = () => {
+  const [editModalIsOpen, setEditModalIsOpen] = useState(false);
+  const [selectedBook, setSelectedBook] = useState(null);
+  const [addNewBookModalIsOpen, setAddNewBookModalIsOpen] = useState(false);
 
   const handleEdit = (book) => {
     setSelectedBook(book);
-    setModalIsOpen(true);
-    console.log(`Edit book with ID ${book}`);
+    setEditModalIsOpen(true);
   };
 
-  const handleDelete = (bookId) => {
-    console.log(`Delete book with ID ${bookId}`);
-  };
+  // const handleDelete = (bookId) => {
+  //   console.log(`Delete book with ID ${bookId}`);
+  // };
 
   const closeModal = () => {
-    setModalIsOpen(false);
+    setEditModalIsOpen(false);
+    setAddNewBookModalIsOpen(false);
   };
 
   const [books, setBooks] = useState(null);
-  //   const [filterData, setFilterData] = useState([]);
+
   useEffect(() => {
     const fetchBooks = async () => {
       try {
@@ -49,23 +47,25 @@ const Books = () => {
         }
         const json = await response.json();
         setBooks(json);
-        // setFilterData(json);
       } catch (error) {
         console.error("Error fetching books", error.message);
       }
     };
     fetchBooks();
   }, []);
-  //   const handleFilter = (value) => {
-  //     const res = filterData.filter((f) =>
-  //       f.bookName.toLowerCase().includes(value)
-  //     );
-  //     setBooks(res);
-  //   };
 
   return (
     <div className={"main_books container_flex_col"}>
-      <div className={"books_header"}></div>
+      <div className={"books_header"}>
+        <h1>Books</h1>
+        <button
+          className={"btn_books btn_add_new_book"}
+          onClick={() => setAddNewBookModalIsOpen(true)}
+        >
+          <FontAwesomeIcon icon={faPlus} />
+          Add New Book
+        </button>
+      </div>
       <div className={"books_table_section"}>
         <table>
           <thead>
@@ -97,7 +97,7 @@ const Books = () => {
                   <td>
                     <button
                       className={"btn_books"}
-                      onClick={() => handleDelete(book)}
+                      // onClick={() => handleDelete(book)}
                     >
                       <FontAwesomeIcon icon={faTrashAlt} />
                     </button>
@@ -107,9 +107,8 @@ const Books = () => {
           </tbody>
         </table>
       </div>
-
       <Modal
-        isOpen={modalIsOpen}
+        isOpen={editModalIsOpen}
         onRequestClose={closeModal}
         ariaHideApp={false}
       >
@@ -117,10 +116,10 @@ const Books = () => {
           <h2>Edit Book</h2>
           {selectedBook && (
             <div>
-              <p> Book Name: {selectedBook.name}</p>
+              <p> Book Name: {selectedBook.bookName}</p>
               <p>Author: {selectedBook.author}</p>
               <p>ISBN Number: {selectedBook.isbn}</p>
-              <p>Added Date: {selectedBook.addedDate}</p>
+              <p>Added Date: {selectedBook.publishedDate}</p>
               <button className={"btn_modal_close"} onClick={closeModal}>
                 Close
               </button>
@@ -128,6 +127,10 @@ const Books = () => {
           )}
         </div>
       </Modal>
+      <AddNewBookModal
+        isOpen={addNewBookModalIsOpen}
+        closeModal={() => setAddNewBookModalIsOpen(false)}
+      />
     </div>
   );
 };
